@@ -10,7 +10,7 @@ using System.Data.Entity;
 using PDVWebCore.Commons;
 
 namespace PDVWebCore.Areas.Admin.Controllers
-{ 
+{
     public class HomeController : Controller
     {
         private PDVWebCoreContext db = new PDVWebCoreContext();

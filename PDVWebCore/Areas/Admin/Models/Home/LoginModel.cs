@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Resources;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace PDVWebCore.Areas.Admin.Models.Home
 {
     public class LoginModel
     {
-        [Display(Name = "Tài khoản")]
+        [Display(ResourceType = typeof(Resource), Name = "admin_home_login_username")]
         [Key]
         [Required(ErrorMessage = "Chưa nhập Tài khoản")]
         public string Username { get; set; }

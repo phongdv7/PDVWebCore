@@ -152,15 +152,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Language\Resource.vi.Designer.cs">
+      <DependentUpon>Resource.vi.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Language\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ChangeLanguageController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Models\Customers\Customer.cs" />
     <Compile Include="Areas\Admin\Models\Customers\CustomerRole.cs" />
     <Compile Include="Areas\Admin\Models\Home\DashboardModel.cs" />
     <Compile Include="Commons\AuthorizeUserAttribute.cs" />
+    <Compile Include="Commons\LanguageMang.cs" />
+    <Compile Include="Commons\MyController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\PDVWebCoreContext.cs" />
@@ -434,6 +447,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Asset\" />
+    <Folder Include="Areas\Admin\Views\ChangeLanguage\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -448,6 +463,16 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Language\Resource.vi.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.vi.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Language\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809230853185_InitialCreate.resx">
       <DependentUpon>201809230853185_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
