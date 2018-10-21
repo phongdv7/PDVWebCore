@@ -24,8 +24,10 @@
     <![endif]-->
 </head>
 <body> 
-    <div>
-        @Html.ActionLink("Tieng Viet", "ChangeLanguage", "ChangeLanguage", new { culture = "vi" }, null)
+    <div style="position: fixed; top: 10px; right: 20px;">
+        <img src="~/Areas/Admin/Asset/Vietnam-flag.png" />
+        @Html.ActionLink("Tiếng Việt", "ChangeLanguage", "ChangeLanguage", new { culture = "vi" }, null)
+        <img src="~/Areas/Admin/Asset/United-states-flag.png" />
         @Html.ActionLink("English", "ChangeLanguage", "ChangeLanguage", new { culture = "en" }, null)
     </div>
     <div class="container">

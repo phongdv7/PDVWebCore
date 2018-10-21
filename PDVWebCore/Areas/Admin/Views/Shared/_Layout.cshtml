@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>PDV Web Core</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="~/Areas/Admin/startbootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,6 +26,7 @@
     <!-- Custom Fonts -->
     <link href="~/Areas/Admin/startbootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <link href="~/Areas/Admin/startbootstrap/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -33,6 +34,14 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+        #page-wrapper .fa {
+            padding-right: 5px !important;
+        }
+        .content-header {
+            position: relative;
+        }
+    </style>
 </head>
 
 <body>
@@ -282,6 +291,20 @@
                         <li>
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
+                        <li>
+                            <a href="#"><i class="fa fa-user fa-fw"></i> Customers<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="@Url.Action("Index", "CustomerRole")"><i class="fa fa-dot-circle-o fa-fw"></i>Customer Roles</a>
+                                </li> 
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+
+
+
+
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">

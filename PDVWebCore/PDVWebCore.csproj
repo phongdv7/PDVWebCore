@@ -152,6 +152,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\Admin\Controllers\CustomerRoleController.cs" />
     <Compile Include="Language\Resource.vi.Designer.cs">
       <DependentUpon>Resource.vi.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -172,8 +173,6 @@
     <Compile Include="Areas\Admin\Models\Customers\CustomerRole.cs" />
     <Compile Include="Areas\Admin\Models\Home\DashboardModel.cs" />
     <Compile Include="Commons\AuthorizeUserAttribute.cs" />
-    <Compile Include="Commons\LanguageMang.cs" />
-    <Compile Include="Commons\MyController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\PDVWebCoreContext.cs" />
@@ -401,6 +400,12 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Login.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomerRole\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomerRole\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomerRole\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomerRole\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomerRole\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_PagingPartial.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -449,7 +454,10 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Asset\" />
     <Folder Include="Areas\Admin\Views\ChangeLanguage\" />
+    <Folder Include="Commons\Controllers\" />
+    <Folder Include="Commons\Models\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Paging\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,0 +1,60 @@
+﻿<div class="row">
+    <div class="col-sm-6">
+        <div class="dataTables_info">Showing @(((int)ViewBag.CurrentPage * (int)ViewBag.PageSize) - (int)ViewBag.PageSize + 1 ) to @((int)ViewBag.CurrentPage * (int)ViewBag.PageSize > ViewBag.TotalCount? ViewBag.TotalCount: (int)ViewBag.CurrentPage * (int)ViewBag.PageSize) of @ViewBag.TotalCount entries</div>
+    </div>
+    <div class="col-sm-6">
+        <div class="dataTables_paginate paging_simple_numbers">
+            <ul class="pagination">
+                @{
+                    double _pageCount = ((double)(((double)ViewBag.TotalCount - 0) / (double)ViewBag.PageSize));
+                    int pageCount = _pageCount - (int)(_pageCount) != 0 ?
+                                    (int)(_pageCount + 1) : (int)_pageCount;
+
+                    string classNameForNext = ViewBag.CurrentPage == pageCount ? "disabled" : string.Empty;
+                    string classNameForPrevious = ViewBag.CurrentPage == 1 ? "disabled" : string.Empty;
+                }
+                <li class="@classNameForPrevious">
+                    @if (classNameForPrevious == string.Empty)
+                    {
+                        @Html.ActionLink("« Prev", "Index", new { page = (ViewBag.CurrentPage - 1) })
+                    }
+                    else
+                    {
+                        <a href="#">« Prev</a>
+                    }
+                </li>
+
+                @for (int pages = 1; pages <= pageCount; pages++)
+
+                {
+
+                    //
+
+                    //adding active class to current page
+
+                    string active = "";
+
+                    if (pages == ViewBag.CurrentPage)
+
+                    {
+
+                        active = "active";
+
+                    }
+
+                    <li class="@active">@Html.ActionLink(pages.ToString(), "Index", new { page = pages })</li>
+                }
+                <li class="@classNameForNext">
+                    @if (classNameForNext == string.Empty)
+                    {
+                        @Html.ActionLink("Next »", "Index", new { page = (ViewBag.CurrentPage + 1) })
+                    }
+                    else
+                    {
+                        <a href="#">Next »</a>
+                    }
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
